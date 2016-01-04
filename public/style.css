@@ -19,7 +19,7 @@ body {
 
 .container {
 	display: table;
-	max-width: 500px;
+	max-width: 300px;
 	min-width: 300px;
 	margin: 0 auto;
 	height: 100%;
@@ -77,4 +77,9 @@ color: Tomato;
 
 li {
 margin-bottom: 1em;
+}
+
+.error {
+	background: Tomato;
+	padding: 10px;
 }
