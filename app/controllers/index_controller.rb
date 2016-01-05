@@ -9,6 +9,11 @@ get '/anagrams/:word' do
 	erb :show
 end
 
+get '/words' do
+  	@words = Word.all
+    erb :"/words/index"
+end
+
 post '/' do
 	@word = params[:word]
 	begin
