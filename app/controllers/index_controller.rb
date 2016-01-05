@@ -14,6 +14,13 @@ get '/words' do
     erb :"/words/index"
 end
 
+get '/words/:id' do
+  	@word = Word.find(params[:id])
+  	@word = @word.text
+  	@letters = @word.chars
+    erb :"/words/show"
+end
+
 post '/' do
 	@word = params[:word]
 	begin
