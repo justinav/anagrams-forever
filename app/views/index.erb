@@ -1,11 +1,11 @@
+<h2>Find 3 letter anagrams</h2>
+
 <% if @error.present? %>
   <p class='error'><%= "#{@error}" %></p>
 <% end %>
- 
+
 <form action="/" method="post" class="form">
   <label for="word">Enter a word</label>
   <input type="text" name="word">
   <input type="submit">
 </form>
-
-<a href="/words">View All Words</a>

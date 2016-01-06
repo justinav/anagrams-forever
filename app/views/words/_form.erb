@@ -1,0 +1,16 @@
+<h2><%= words_form_header(@word) %></h2>
+
+<% if !@errors.blank? %>
+<div class="alert alert-danger">
+	<%= @errors %>
+</div>
+<% end %>
+
+<form action="<%= words_form_action(@word) %>" method="post" class="form" id="<%= words_form_id(@word) %>">
+	<input type="hidden" name="_method" value="<%= words_form_method(@word) %>">
+	<label for="word">Enter a word</label>
+	<input type="text" name="word">
+	<input type="submit">
+</form>
+
+<a href="/words">View All Words</a>

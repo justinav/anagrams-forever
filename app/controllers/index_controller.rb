@@ -1,11 +1,12 @@
 get '/' do
-  erb :index
+  	@word = Word.first
+	erb :index
 end
 
 get '/anagrams/:word' do
 	@word = params[:word]
 	alphabetized_string = @word.chars.sort.join
-    @anagrams = Word.where("letters=?", alphabetized_string)
+	@anagrams = Word.where("letters=?", alphabetized_string)
 	erb :show
 end
 
