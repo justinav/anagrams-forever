@@ -30,6 +30,21 @@ body {
 	letter-spacing: 1.5px;
 }
 
+/* Main Navigation */
+.navbar li:before {
+content: '';
+padding: 0;
+}
+
+.navbar li {
+display: inline-block;
+padding-right: 15px;
+}
+
+.navbar li:last-child {
+padding-right: 0px;
+}
+
 /* Form */
 form {
 	max-width: 300px;
