@@ -1,6 +1,6 @@
 get '/words' do
 	word = params[:word]
-	@words = Word.all
+	@words = Word.all.sort
 	erb :"/words/index"
 end
 
@@ -11,7 +11,16 @@ end
 
 post '/words' do
 	@word = Word.create(text: params[:word])
-	redirect "/words/#{@word.id}"
+	@letters = @word.text.chars
+	if @letters.count > 0
+		@word.save	
+		redirect "/words/#{@word.id}"
+	else
+		@word.delete
+		@error = "nah man. you gotta put in more letters."
+		erb :"/words/new"
+	end
+
 end
 
 get '/words/:id' do

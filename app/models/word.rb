@@ -1,4 +1,5 @@
 class Word < ActiveRecord::Base
+  # validates_presence_of :word
 
   before_save :add_letters
 
@@ -53,23 +54,9 @@ class Word < ActiveRecord::Base
     reversed_letters
   end
 
-  def self.distinct_letters?(input)
-     letter_array = input.chars
-     unique_letters = letter_array.uniq
-     if unique_letters.length < letter_array.length
-       false
-     else
-       true
-     end
-  end
-
   def self.valid_input(input)
-    if input.length > 3
-      raise Exception.new("Word must have 3 letters or less.")
-    end
-
-    if self.distinct_letters?(input) == false
-      raise Exception.new("Word must not repeat letters.")
+    if input.empty?
+      raise Exception.new("Word must have one or more letters.")
     end
   end
 end

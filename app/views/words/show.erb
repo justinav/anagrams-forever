@@ -1,5 +1,20 @@
 <h1>Words</h1>
 <ul>
-  <li><%= "#{@word.text}, #{@letters}" %></li>
+	<li><%= "#{@word.text}, #{@letters}" %></li>
 </ul>
-<a href="<%= "/words/#{@word.id}/edit" %>">Edit</a>
+
+<div class="word-page-form">
+	<form action="<%= "/words/#{@word.id}/edit" %>" method="put">
+		<input type="hidden" name="_method" value="edit" />
+		<button class="btn btn-danger" type="submit">
+			Edit
+		</button>
+	</form>
+
+	<form action="<%= "/words/#{@word.id}" %>" method="post">
+		<input type="hidden" name="_method" value="delete" />
+		<button class="btn btn-danger" type="submit">
+			Delete
+		</button>
+	</form>
+</div>

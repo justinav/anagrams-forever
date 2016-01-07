@@ -11,12 +11,6 @@ body {
 	font: 400 18px/1.2 sans-serif;
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
 .container {
 	max-width: 500px;
 	margin: 0 auto;
@@ -29,6 +23,25 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 }
+
+h1,
+h2,
+h3,
+p,
+label,
+input,
+ul {
+text-align: center;
+}
+
+a {
+color: Teal;
+}
+
+a:hover {
+color: Tomato;
+}
+
 
 /* Main Navigation */
 .navbar li:before {
@@ -48,6 +61,7 @@ padding-right: 0px;
 /* Form */
 form {
 	max-width: 300px;
+	margin: 0 auto;
 }
 
 label,
@@ -75,6 +89,16 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background: Coral;
 	border-color: Tomato;
+}
+
+/* Word ID Page */
+.word-page-form {
+text-align: center;
+}
+
+.word-page-form > form {
+display: inline-block;
+margin: 1em auto;
 }
 
 /* List */
